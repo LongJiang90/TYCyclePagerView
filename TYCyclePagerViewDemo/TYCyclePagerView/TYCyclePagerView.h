@@ -52,6 +52,8 @@ typedef NS_ENUM(NSUInteger, TYPagerScrollDirection) {
  */
 - (void)pagerView:(TYCyclePagerView *)pageView didScrollFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
 
+- (void)pagerView:(TYCyclePagerView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath;
+
 /**
  pagerView did selected item cell
  */
