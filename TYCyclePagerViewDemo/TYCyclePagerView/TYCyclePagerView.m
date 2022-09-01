@@ -472,6 +472,12 @@ NS_INLINE TYIndexSection TYMakeIndexSection(NSInteger index, NSInteger section) 
     return nil;
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
+    if ([_delegate respondsToSelector:@selector(pagerView:didEndDisplayingCell:forItemAtIndexPath:)]) {
+        [_delegate pagerView:self didEndDisplayingCell:cell forItemAtIndexPath:indexPath];
+    }
+}
+
 #pragma mark - UICollectionViewDelegateFlowLayout
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
